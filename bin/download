@@ -16,3 +16,4 @@ release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION"
 # Download bin file to the download directory
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
+mv $release_file $ASDF_DOWNLOAD_PATH/cidr-merger
