@@ -47,7 +47,7 @@ download_release() {
     arch=$arch_test
   fi
 
-  url="$GH_REPO/releases/download/v${version}/cidr-merger-${platform}_${arch}.tar.gz"
+  url="$GH_REPO/releases/download/v${version}/cidr-merger-${platform}-${arch}.tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
