@@ -41,7 +41,7 @@ download_release() {
 
   local arch_test=$(uname -m)
 
-  if [[ "$arch_test" = x86_64 ]];then
+  if [[ "$arch_test" = x86_64 ]]; then
     arch=amd64
   else
     arch=$arch_test
