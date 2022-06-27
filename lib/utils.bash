@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-GH_REPO="https://github.com/zhanhb/cidr-merger/"
+GH_REPO="https://github.com/zhanhb/cidr-merger"
 TOOL_NAME="cidr-merger"
 TOOL_TEST="cidr-merger --version"
 
@@ -37,9 +37,15 @@ download_release() {
   version="$1"
   filename="$2"
 
-  local platform=$(uname)
+  local platform=$(uname | tr '[:upper:]' '[:lower:]')
 
-  local arch=$(uname -m)
+  local arch_test=$(uname -m)
+
+  if [[ "$arch_test" = x86_64 ]];then
+    arch=amd64
+  else
+    arch=$arch_test
+  fi
 
   url="$GH_REPO/releases/download/v${version}/cidr-merger-${platform}_${arch}.tar.gz"
 
